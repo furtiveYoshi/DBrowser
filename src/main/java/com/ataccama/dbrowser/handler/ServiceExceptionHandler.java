@@ -13,17 +13,17 @@ import javax.persistence.EntityNotFoundException;
 public class ServiceExceptionHandler {
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity handleEntityNotFoundException(EntityNotFoundException ex){
-        return new ResponseEntity(ex.getMessage(), HttpStatus.NOT_FOUND);
+    public ResponseEntity<String> handleEntityNotFoundException(EntityNotFoundException ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity handleIllegalArgumentException(IllegalArgumentException ex){
-        return new ResponseEntity(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity handleException(Exception ex){
-        return new ResponseEntity(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    public ResponseEntity<String> handleException(Exception ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

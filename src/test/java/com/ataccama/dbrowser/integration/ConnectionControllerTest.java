@@ -24,9 +24,6 @@ public class ConnectionControllerTest {
     private static final MediaType ERROR_MEDIA_TYPE = new MediaType(MediaType.TEXT_PLAIN, StandardCharsets.UTF_8);
 
     @Autowired
-    private ConnectionController connectionController;
-
-    @Autowired
     private MockMvc mockMvc;
 
     @Test
